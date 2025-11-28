@@ -1,0 +1,132 @@
+
+alpha = 0
+background_index = 1
+cad_materials_protected = 1
+delta = 0
+free_space_wavelength = 1
+height = width
+index = delta+background_index
+k0 = (2*pi)/free_space_wavelength
+sim_tool = ST_BEAMPROP
+width = 1
+
+
+material 1
+	name = Graphene
+	optical
+		ni = semi::Ni_
+		ni_xx = semi::Ni_
+		ni_yy = semi::Ni_
+		nr = semi::Nr_
+		nr_xx = semi::Nr_
+		nr_yy = semi::Nr_
+		nr_zz = semi::Nc_
+	end optical
+	semiconductor
+		E_ = 1
+		EpsC_ = 1
+		G1_ = 0.005
+		G2_ = default
+		H_ = 0.0007
+		L_ = free_space_wavelength
+		Nc_ = sqrt(semi::EpsC_)
+		Ni_ = graphene_imag(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		Nr_ = graphene_real(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		T_ = 300
+		U_ = 0.5
+	end semiconductor
+end material
+
+material 2
+	name = GrapheneCX
+	optical
+		anisotropic = 1
+		ni = semi::Ni_
+		ni_yy = semi::Ni_
+		ni_zz = semi::Ni_
+		nr = semi::Nr_
+		nr_xx = semi::Nc_
+		nr_yy = semi::Nr_
+		nr_zz = semi::Nr_
+	end optical
+	semiconductor
+		E_ = 1
+		EpsC_ = 1
+		G1_ = 0.005
+		G2_ = default
+		H_ = 0.0007
+		L_ = free_space_wavelength
+		Nc_ = sqrt(semi::EpsC_)
+		Ni_ = graphene_imag(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		Nr_ = graphene_real(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		T_ = 300
+		U_ = 0.5
+	end semiconductor
+end material
+
+material 3
+	name = GrapheneCY
+	optical
+		anisotropic = 1
+		ni = semi::Ni_
+		ni_xx = semi::Ni_
+		ni_zz = semi::Ni_
+		nr = semi::Nr_
+		nr_xx = semi::Nr_
+		nr_yy = semi::Nc_
+		nr_zz = semi::Nr_
+	end optical
+	semiconductor
+		E_ = 1
+		EpsC_ = 1
+		G1_ = 0.005
+		G2_ = default
+		H_ = 0.0007
+		L_ = free_space_wavelength
+		Nc_ = sqrt(semi::EpsC_)
+		Ni_ = graphene_imag(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		Nr_ = graphene_real(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		T_ = 300
+		U_ = 0.5
+	end semiconductor
+end material
+
+material 4
+	name = GrapheneCZ
+	optical
+		anisotropic = 1
+		ni = semi::Ni_
+		ni_xx = semi::Ni_
+		ni_yy = semi::Ni_
+		nr = semi::Nr_
+		nr_xx = semi::Nr_
+		nr_yy = semi::Nr_
+		nr_zz = semi::Nc_
+	end optical
+	semiconductor
+		E_ = 1
+		EpsC_ = 1
+		G1_ = 0.005
+		G2_ = default
+		H_ = 0.0007
+		L_ = free_space_wavelength
+		Nc_ = sqrt(semi::EpsC_)
+		Ni_ = graphene_imag(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		Nr_ = graphene_real(semi::L_,semi::U_,semi::G1_,semi::G2_,semi::T_,semi::H_,semi::E_)
+		T_ = 300
+		U_ = 0.5
+	end semiconductor
+end material
+
+material 5
+	name = PEC
+	optical
+		inputmode = 1
+		nr = -inf
+	end optical
+end material
+
+
+
+
+
